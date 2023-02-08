@@ -6,4 +6,4 @@ amount=float(input("Enter a number:"))
 total=rate*amount
 print (total)
 result=total-3
-print (result)
+print ("Your result minus a $3 convenience fee is",  result)
