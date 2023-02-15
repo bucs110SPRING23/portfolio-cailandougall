@@ -1,9 +1,9 @@
 import pygame
 pygame.init()
+screen=pygame.display.set_mode()
+screen.fill("black")
 while 1:
     pygame.event.pump()
-    screen=pygame.display.set_mode()
-    screen.fill("black")
     pygame.draw.circle (screen, "blue", [300,200], 50)
     pygame.draw.circle (screen, "blue", [300,150], 40)
     pygame.draw.circle (screen, "blue", [300,100], 30)
