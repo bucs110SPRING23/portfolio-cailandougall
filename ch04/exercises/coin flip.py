@@ -20,3 +20,5 @@ while turtle.pos()[0] < screenx and turtle.pos()[0] > (screenx*-1) and turtle.po
         turtle.right(angle)
         turtle.fd (50)
 print(turtle.pos())
+window=turtle.Screen()
+window.exitonclick()
