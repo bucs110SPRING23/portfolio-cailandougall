@@ -23,12 +23,15 @@ highlight_colors = {
  "yellow": (255, 255, 0),
  "green": (0, 255, 0),
 }
+for c, hb in hitboxes.items():
+    pygame.draw.rect(screen, main_colors[c], hb)
 font=pygame.font.SysFont("Times New Roman", 12)
 text = font.render("Who do you think is going to win?: Player yellow or Player green?", True, "white")
 text = font.render("Please click a box", True, "white")
 screen.blit(text, (0,0)) 
 pygame.display.flip()
 pygame.time.wait(250)
+screen.fill("blue")
 my_guess=""
 while my_guess=="":
     for event in pygame.event.get():
@@ -68,8 +71,6 @@ for i in range(10):
         pygame.draw.circle(screen, "orange", (x3, y3), 5)
 pygame.display.flip()
 pygame.time.wait(250) 
-for c, hb in hitboxes.items():
-    pygame.draw.rect(screen, main_colors[c], hb)
 if player_green_score<player_yellow_score:
     winner="yellow"
     if my_guess==winner:
@@ -91,13 +92,13 @@ elif player_yellow_score<player_green_score:
         screen.blit(text, (0,0))  
     elif my_guess!=winner:
         font = pygame.font.SysFont("Times New Roman", 24)
-        msg=("Oof, that's not it... Player green won and they scored " + str(player_green_score) + " points!")
+        msg=("Oof, that's not it...Player green won and they scored " + str(player_green_score) + " points!")
         text = font.render(msg, True, "white")
         screen.blit(text, (0,0))  
 elif player_yellow_score==player_green_score:
-    font = pygame.font.SysFont("Times New Roman", 24)
-    msg=("It's a tie! They both scored " + str(player_yellow_score) + " points!")
-    text = font.render(msg, True, "white")
-    screen.blit(text, (0,0))  
+        font = pygame.font.SysFont("Times New Roman", 24)
+        msg=("It's a tie! They both scored " + str(player_yellow_score) + " points!")
+        text = font.render(msg, True, "white")
+        screen.blit(text, (0,0))  
 pygame.display.flip()
-pygame.time.wait (10000)
+pygame.time.wait (5000)
