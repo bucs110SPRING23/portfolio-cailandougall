@@ -1,16 +1,31 @@
 def multiplication(param1, param2):
+    """
+    This function multiplies two numbers using a loop and an accumulator
+    args: param1(int), param2(int)
+    return: result (int)
+    """
     result=0
     for num in range (0, param2):
         result+=param1
     return result
 
 def exponentiation(param1, param2):
+    """
+    This function raises a number to an exponent using multiplication
+    args: param1(int), param2(int)
+    return: result (int)
+    """
     result=1
     for num in range (0, param2):
         result*=param1
     return result
 
 def square(param1):
+    """
+    This function squares a number using the exponentiation function from above
+    args: param1 (int), 2(int)
+    return: exponentiation (param1, 2) (int)
+    """
     return exponentiation (param1, 2)
 
 def main():
