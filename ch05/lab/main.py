@@ -1,4 +1,5 @@
 import pygame
+screen=pygame.display.set_mode()
 def threenp1(n):
     count=0
     while n>1.0:
@@ -15,12 +16,23 @@ def threenp1range(upper_limit):
     return my_dict
 def main():
     upper_limit=int(input("Enter the limit: "))
-    print (threenp1range(upper_limit))
-def graph():
+    my_result=threenp1range(upper_limit)
+    graph (my_result)
+    print (my_result)
+def graph(my_result):
     pygame.init()
-    screen=pygame.display.set_mode()
-    pygame.draw.lines()
-
+    pygame.draw.lines(screen, "red", False, list(my_result.items()))
+    new_screen=pygame.transform.flip(screen, False, True)
+    width, height=new_screen.get_size()
+    new_screen= pygame.transform.scale(new_screen, (width * 5, height * 5))
+    screen.blit(new_screen, (0, 0))
+    max_so_far=-1
+    for value in (my_result.values()):
+        if value>max_so_far:
+            max_so_far=value
+    font=pygame.font.Font(None, 24)
+    msg=font.render(str(max_so_far), True, "blue")
+    screen.blit(msg, (50,50))
 main()
            
         
