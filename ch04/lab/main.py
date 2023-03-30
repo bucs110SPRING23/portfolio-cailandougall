@@ -75,24 +75,24 @@ if player_green_score<player_yellow_score:
     winner="yellow"
     if my_guess==winner:
         font = pygame.font.SysFont("Times New Roman", 24)
-        msg=("You were right! Player yellow won and they scored " + str(player_yellow_score) + " points!")
+        msg=("You were right! Player yellow won and they scored " + str(player_yellow_score) + " points! Player green only scored " + str(player_green_score) + " points.")
         text = font.render(msg, True, "white")
         screen.blit(text, (0,0)) 
     elif my_guess!=winner:
         font = pygame.font.SysFont("Times New Roman", 24)
-        msg=("Um, not quite...Player yellow won and they scored " + str(player_yellow_score) + " points!")
+        msg=("Um, not quite...Player yellow won and they scored " + str(player_yellow_score) + " points! Player green only scored " + str(player_green_score) + " points.")
         text = font.render(msg, True, "white")
         screen.blit(text, (0,0)) 
 elif player_yellow_score<player_green_score:
     winner="green"
     if my_guess==winner:
         font = pygame.font.SysFont("Times New Roman", 24)
-        msg=("You were right! Player green won and they scored " + str(player_green_score) + " points!")
+        msg=("You were right! Player green won and they scored " + str(player_green_score) + " points! Player yellow only scored " + str(player_yellow_score) + " points.")
         text = font.render(msg, True, "white")
         screen.blit(text, (0,0))  
     elif my_guess!=winner:
         font = pygame.font.SysFont("Times New Roman", 24)
-        msg=("Oof, that's not it...Player green won and they scored " + str(player_green_score) + " points!")
+        msg=("Oof, that's not it...Player green won and they scored " + str(player_green_score) + " points! Player yellow only scored " + str(player_yellow_score) + " points.")
         text = font.render(msg, True, "white")
         screen.blit(text, (0,0))  
 elif player_yellow_score==player_green_score:
